@@ -46,7 +46,7 @@
                             </div>
                             <div>
                                 <button id="verify-pin" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <!-- <p class="action-left">3 try left</p> -->
                             </div>
                         </div>
                     </div>
@@ -58,34 +58,7 @@
             </div>
         </div>
         
-        <script>
-
-            function generatePin(){
-                const random = Math.round(Math.random()*10000);
-                return random;
-            }
-
-            function getPin(){
-                const pin = generatePin() ;
-                const pinString = pin + "" ;
-                if (pinString.length === 4){
-
-                    return pin ;
-                } else{
-                return getPin();
-            }
-
-            } 
-           
-            document.getElementById("generate-pin").addEventListener("click" , function(){
-
-                const pin = getPin() ;
-
-                const displayPinField = document.getElementById("display-pin") ;
-                displayPinField.value = pin ;
-            })
-
-        </script>
+        <script src="pin.js"></script>
 </body>
 
 </html>
