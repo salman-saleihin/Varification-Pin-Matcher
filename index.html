@@ -57,7 +57,35 @@
                 <p id="pin-success" class="notify">✅ Pin Matched... Secret door is opening for you</p>
             </div>
         </div>
-        <script src="js/app.js"></script>
+        
+        <script>
+
+            function generatePin(){
+                const random = Math.round(Math.random()*10000);
+                return random;
+            }
+
+            function getPin(){
+                const pin = generatePin() ;
+                const pinString = pin + "" ;
+                if (pinString.length === 4){
+
+                    return pin ;
+                } else{
+                return getPin();
+            }
+
+            } 
+           
+            document.getElementById("generate-pin").addEventListener("click" , function(){
+
+                const pin = getPin() ;
+
+                const displayPinField = document.getElementById("display-pin") ;
+                displayPinField.value = pin ;
+            })
+
+        </script>
 </body>
 
 </html>
